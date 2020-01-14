@@ -11,10 +11,15 @@ defmodule IBMCloud.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
-      licenses: ["Apache-2.0"],
+
+      # hex
+      description: "Thin wrapper for IBM Cloud API",
+      package: package(),
 
       # ex_doc
       name: "IBMCloud",
+      source_url: "https://github.com/IBM/elixir-ibmcloud",
+      homepage_url: "https://github.com/IBM/elixir-ibmcloud",
       docs: [main: "IBMCloud"]
     ]
   end
@@ -31,6 +36,15 @@ defmodule IBMCloud.MixProject do
       {:credo, "~> 1.1", only: :dev, runtime: false},
       {:excoveralls, "~> 0.12", only: :test},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false}
+    ]
+  end
+
+  defp package do
+    [
+      licenses: ["Apache-2.0"],
+      links: %{
+        "GitHub" => "https://github.com/IBM/elixir-ibmcloud"
+      }
     ]
   end
 end
