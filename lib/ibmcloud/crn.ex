@@ -14,7 +14,6 @@ defmodule IBMCloud.CRN do
           location: binary() | nil,
           scope: binary() | nil,
           service_instance: binary() | nil,
-          service_instance: binary() | nil,
           resource_type: binary() | nil,
           resource: binary() | nil
         }
@@ -24,7 +23,6 @@ defmodule IBMCloud.CRN do
             service_name: nil,
             location: nil,
             scope: nil,
-            service_instance: nil,
             service_instance: nil,
             resource_type: nil,
             resource: nil
