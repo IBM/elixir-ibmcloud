@@ -32,10 +32,12 @@ defmodule IBMCloud.MixProject do
     [
       {:jason, "~> 1.1"},
       {:jose, "~> 1.10"},
-      {:tesla, "~> 1.3"},
+      {:tesla, "~> 1.4"},
+      {:uri_query, "~> 0.1.1"},
       {:credo, "~> 1.1", only: :dev, runtime: false},
       {:excoveralls, "~> 0.12", only: :test},
-      {:ex_doc, "~> 0.21", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.21", only: :dev, runtime: false},
+      {:faker, "~> 0.17", only: :test}
     ]
   end
 
