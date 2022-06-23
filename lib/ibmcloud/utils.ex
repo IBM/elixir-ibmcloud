@@ -22,6 +22,19 @@ defmodule IBMCloud.Utils do
     )
   end
 
+  def build_json_client_with_api_key(endpoint, api_key, adapter) when is_binary(api_key) do
+    credentials = :base64.encode("apikey:#{api_key}")
+
+    Tesla.client(
+      [
+        {Tesla.Middleware.BaseUrl, endpoint},
+        Tesla.Middleware.JSON,
+        {Tesla.Middleware.Headers, [{"authorization", "Basic #{credentials}"}]}
+      ],
+      adapter
+    )
+  end
+
   def uri_encode(val) when is_integer(val), do: to_string(val)
   def uri_encode(val), do: URI.encode(val, &URI.char_unreserved?/1)
 
